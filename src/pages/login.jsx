@@ -1,11 +1,11 @@
-import "./login.scss";
-import mainlogo from "./assets/main-logo.svg";
-import kakao from "./assets/kakaoLogin.svg";
-import facebook from "./assets/facebookLogin.svg";
-import naver from "./assets/naverLogin.svg";
-import apple from "./assets/appleLogin.svg";
-import { useEffect, useState } from "react";
-import useDidMountEffect from "./hooks/useDidMountEffect";
+import "../styles/login.scss";
+import mainlogo from "../assets/main-logo.svg";
+import kakao from "../assets/kakaoLogin.svg";
+import facebook from "../assets/facebookLogin.svg";
+import naver from "../assets/naverLogin.svg";
+import apple from "../assets/appleLogin.svg";
+import { useState } from "react";
+import useDidMountEffect from "../hooks/useDidMountEffect";
 
 const Header = () => {
   return (
@@ -64,7 +64,7 @@ const LoginForm = () => {
   useDidMountEffect(passIdPw, [isPw, isId]);
 
   return (
-    <form action="#">
+    <form action="/home">
       <div className="loginForm">
         <input
           className={isId ? "true" : "false"}
@@ -89,7 +89,9 @@ const LoginForm = () => {
         </p>
       </div>
       <div className="loginBtn">
-        <button className={isButton ? "action" : null}>로그인</button>
+        <button onSubmit={""} className={isButton ? "action" : null}>
+          로그인
+        </button>
         <div>
           <span>아이디 찾기</span>
           <span>•</span>
