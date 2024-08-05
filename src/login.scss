@@ -1,0 +1,124 @@
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("./src/assets/background-image.jpg");
+  background-size: cover;
+}
+
+.containerInner {
+  @include flex(column, center, center);
+  padding-bottom: 60px;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+header {
+  div {
+    @include flex(column, center, center);
+    margin-bottom: 36px;
+
+    span {
+      font-style: italic;
+      font-size: 1.5rem;
+      color: #828282;
+      font-weight: 300;
+    }
+  }
+}
+
+.login {
+  // position: relative;
+  @include flex(column, center, center, 60px);
+
+  form {
+    @include flex(column, $gap: 60px);
+  }
+
+  .loginForm {
+    @include flex(column, center, center, 16px);
+
+    input.error {
+      outline: 1px solid #eb5757;
+      border: 1px solid #eb5757;
+    }
+
+    input {
+      width: 343px;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid #d2d0d6;
+      border-radius: 8px;
+      color: #fff;
+      background-color: transparent;
+
+      // &:focus {
+      //   outline: 1px solid #01c854;
+      //   border: 1px solid #01c854;
+      // }
+    }
+    .errorEmail {
+      width: 100%;
+      font-size: 12px;
+      font-weight: 300;
+      color: #eb5757;
+    }
+
+    .errorPw {
+      width: 100%;
+      font-size: 12px;
+      font-weight: 300;
+      color: #eb5757;
+    }
+
+    .success {
+      display: none;
+    }
+  }
+
+  .loginBtn {
+    @include flex(column, center, center, 16px);
+
+    Button {
+      width: 343px;
+      height: 48px;
+      padding: 0 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #828282;
+      color: #4f4f4f;
+      cursor: pointer;
+    }
+
+    span {
+      color: #d2d0d6;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .loginSocial {
+    @include flex(column, center, center, 16px);
+
+    div {
+      @include flex($gap: 16px);
+
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
