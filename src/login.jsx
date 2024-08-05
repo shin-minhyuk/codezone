@@ -23,51 +23,73 @@ const LoginForm = () => {
   const [inpPwValue, setInpPwValue] = useState("");
   const [isId, setIsId] = useState(true);
   const [isPw, setIsPw] = useState(true);
+  const [isButton, setIsButton] = useState(false);
 
   const changeInpIdValue = (e) => {
     setInpIdValue(e.target.value);
   };
 
   const changeInpPwValue = (e) => {
-    setInpIdValue(e.target.value);
+    setInpPwValue(e.target.value);
   };
 
-  const check = () => {
-    if (inpIdValue.length > 6 && inpIdValue.indexOf("@") !== -1) {
+  const checkId = () => {
+    setIsId(false);
+    if (inpIdValue.indexOf("@") !== -1) {
       setIsId(true);
     } else {
       setIsId(false);
     }
   };
 
-  useDidMountEffect(check, [inpIdValue]);
+  const checkPw = () => {
+    setIsPw(false);
+    if (inpPwValue.length >= 6) {
+      setIsPw(true);
+    } else {
+      setIsPw(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   if (inpIdValue.length > 6 && inpIdValue.indexOf("@") !== -1) {
-  //     setIsId(true);
-  //   } else {
-  //     setIsId(false);
-  //   }
-  // }, [inpIdValue]);
+  const passIdPw = () => {
+    if (isId && isPw && inpIdValue !== "" && inpPwValue.length >= 5) {
+      setIsButton(true);
+    } else {
+      setIsButton(false);
+    }
+  };
+
+  useDidMountEffect(checkId, [inpIdValue]);
+  useDidMountEffect(checkPw, [inpPwValue]);
+  useDidMountEffect(passIdPw, [isPw, isId]);
 
   return (
     <form action="#">
       <div className="loginForm">
         <input
-          className={isId ? null : "error"}
+          className={isId ? "true" : "false"}
           type="email"
           placeholder="이메일"
           onChange={changeInpIdValue}
           value={inpIdValue}
         />
-        <p className={isId ? "success" : "errorEmail"}>
+        <p className={isId ? "successEmail" : "errorEmail"}>
           올바른 이메일 형식이 아닙니다
         </p>
-        <input type="password" placeholder="비밀번호" />
-        <p className="errorPw">비밀번호는 6자리 이상 입력해주세요</p>
+
+        <input
+          className={isPw ? "true" : "false"}
+          type="password"
+          placeholder="비밀번호"
+          onChange={changeInpPwValue}
+          value={inpPwValue}
+        />
+        <p className={isPw ? "successPw" : "errorPw"}>
+          비밀번호는 6자리 이상 입력해주세요
+        </p>
       </div>
       <div className="loginBtn">
-        <button>로그인</button>
+        <button className={isButton ? "action" : null}>로그인</button>
         <div>
           <span>아이디 찾기</span>
           <span>•</span>

@@ -41,7 +41,6 @@ header {
 }
 
 .login {
-  // position: relative;
   @include flex(column, center, center, 60px);
 
   form {
@@ -65,11 +64,17 @@ header {
       color: #fff;
       background-color: transparent;
 
-      // &:focus {
-      //   outline: 1px solid #01c854;
-      //   border: 1px solid #01c854;
-      // }
+      &.true:focus {
+        outline: 1px solid #01c854;
+        border: 1px solid #01c854;
+      }
+
+      &.false:focus {
+        outline: 1px solid #eb5757;
+        border: 1px solid #eb5757;
+      }
     }
+
     .errorEmail {
       width: 100%;
       font-size: 12px;
@@ -84,7 +89,11 @@ header {
       color: #eb5757;
     }
 
-    .success {
+    .successEmail {
+      display: none;
+    }
+
+    .successPw {
       display: none;
     }
   }
@@ -92,7 +101,7 @@ header {
   .loginBtn {
     @include flex(column, center, center, 16px);
 
-    Button {
+    button {
       width: 343px;
       height: 48px;
       padding: 0 16px;
@@ -101,6 +110,10 @@ header {
       background-color: #828282;
       color: #4f4f4f;
       cursor: pointer;
+    }
+
+    .action {
+      background: #01c854;
     }
 
     span {
