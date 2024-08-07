@@ -31,7 +31,7 @@ const SignUp = () => {
             이메일
             <span className="text-[12px] text-[#0040ff] font-[700]">
               {" "}
-              *로그인 시 아이디로 사용합니다.
+              *로그인 시 아이디로 사용합니다
             </span>
           </label>
           <input
