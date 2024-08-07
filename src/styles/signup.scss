@@ -1,0 +1,33 @@
+.inpForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    width: 343px;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #d2d0d6;
+    border-radius: 8px;
+    color: #fff;
+    background-color: transparent;
+
+    margin-bottom: 24px;
+  }
+
+  div {
+    border-top: 1px solid #828282;
+
+    .signUpBtn {
+      width: 343px;
+      height: 48px;
+      padding: 0 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #0040ff;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 34px;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import SignUp from "./pages/signup";
 
 function App() {
   return (
@@ -9,13 +10,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
       </Routes>
-
-      {/* <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/detail/:id" element={<Detail />}></Route>
-        <Route path="/search" element={<Search />}></Route>
-      </Routes> */}
     </>
   );
 }
