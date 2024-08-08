@@ -9,6 +9,7 @@ import mysql from "../assets/icon/mysql.svg";
 import javascript from "../assets/icon/javascript.svg";
 import css from "../assets/icon/css.svg";
 import html from "../assets/icon/html.svg";
+import client from "../client/client";
 
 const Header2 = () => {
   return (
@@ -176,4 +177,14 @@ function Home() {
   );
 }
 
+const getPostList = () => {
+  client
+    .get("/rest/v1/posts", {
+      Authorization: localStorage.getItem("COMMUNITY_TOKEN"),
+    })
+    .then((res) => console.log("성공: ", res))
+    .catch((err) => console.log("err: ", err));
+};
+
+getPostList();
 export default Home;
