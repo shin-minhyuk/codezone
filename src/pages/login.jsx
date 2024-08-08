@@ -1,9 +1,9 @@
 import "../styles/login.scss";
-import mainlogo from "../assets/main-logo.svg";
-import kakao from "../assets/kakaoLogin.svg";
-import facebook from "../assets/facebookLogin.svg";
-import naver from "../assets/naverLogin.svg";
-import apple from "../assets/appleLogin.svg";
+import mainlogo from "../assets/icon/main-logo.svg";
+import kakao from "../assets/icon/kakaoLogin.svg";
+import facebook from "../assets/icon/facebookLogin.svg";
+import naver from "../assets/icon/naverLogin.svg";
+import apple from "../assets/icon/appleLogin.svg";
 import { useState } from "react";
 import useDidMountEffect from "../hooks/useDidMountEffect";
 import client from "../client/client";

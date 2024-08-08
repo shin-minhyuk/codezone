@@ -1,6 +1,14 @@
 import "../styles/home.scss";
-import sublogo from "../assets/sub-logo.svg";
+import sublogo from "../assets/icon/sub-logo.svg";
 import { useEffect, useState } from "react";
+import search from "../assets/icon/search_24.svg";
+import java from "../assets/icon/java.svg";
+import python from "../assets/icon/python.svg";
+import reactImg from "../assets/icon/reactimg.svg";
+import mysql from "../assets/icon/mysql.svg";
+import javascript from "../assets/icon/javascript.svg";
+import css from "../assets/icon/css.svg";
+import html from "../assets/icon/html.svg";
 
 const Header2 = () => {
   return (
@@ -9,7 +17,7 @@ const Header2 = () => {
         <img src={sublogo} alt="코드존 로고" />
       </div>
       <div className="center">
-        <img src="" alt="" />
+        <img className="search" src={search} alt="검색" />
         <input type="text" placeholder="Search" />
       </div>
       <div className="right"></div>
@@ -22,68 +30,137 @@ const MainSection = () => {
     <>
       <div className="mainSection">
         <main>
-          <section className="section-list">
-            {/* <article>
+          <section className="section-list side">
+            <article>
               <ul>
-                <li>나의 코드</li>
-                <li>그룹</li>
-                <li>메시지</li>
-                <li>북마크</li>
+                <li>
+                  <p className="img"></p>
+                  나의 코드
+                </li>
+                <li>
+                  <p className="img"></p>그룹
+                </li>
+                <li>
+                  <p className="img"></p>메시지
+                </li>
+                <li>
+                  <p className="img"></p>북마크
+                </li>
               </ul>
             </article>
             <article>
               <ul>
-                <li>알림</li>
-                <li>설정</li>
+                <li>
+                  <p className="img"></p>알림
+                </li>
+                <li>
+                  <p className="img"></p>설정
+                </li>
               </ul>
             </article>
             <article>
               <ul>
-                <li>김진모</li>
-                <li>박미선</li>
+                <li>
+                  <p className="img"></p>김진모
+                </li>
+                <li>
+                  <p className="img"></p>박미선
+                </li>
               </ul>
-            </article> */}
+            </article>
           </section>
 
-          <section className="section-list">
-            {/* <article>
-              <div>
+          <section className="section-list center">
+            <article className="textarea">
+              <div className="textarea-inner">
                 <textarea name="" id=""></textarea>
-                <div>
+                <div className="textarea-bottom">
                   <div>
-                    <button>O</button>
-                    <button>O</button>
+                    <div className="icon"></div>
+                    <div className="icon"></div>
                     <button>더보기</button>
                   </div>
-                  <button>123</button>
+                  <div className="icon-right"></div>
                 </div>
               </div>
             </article>
 
-            <article>
-              <div>
-                <img src="" alt="" />
+            <article className="post">
+              <div className="post-inner">
+                <div className="guest">
+                  <div className="guest-image"></div>
+                  <div className="guest-name">
+                    <span>신민혁</span>
+                    <p>2시간 전</p>
+                  </div>
+                </div>
+
+                <div className="post-box">
+                  <div className="post-text">
+                    Lorem ipsum dolor sit amet consectetur. Donec nunc varius
+                    turpis nullam. Quam id pellentesque vitae non mi in
+                    pellentesque molestie. Tristique at ac pellentesque rhoncus
+                    bibendum euismod consectetur convallis. Ipsum urna
+                    ullamcorper dignissim urna in magna est leo morbi. Lorem
+                    ipsum dolor sit amet consectetur. Donec nunc varius turpis
+                    nullam.
+                  </div>
+
+                  <div className="post-language">#javascript</div>
+
+                  <div className="post-buttons">
+                    <div>
+                      <button></button>
+                      <span>200</span>
+                    </div>
+                    <div>
+                      <button></button>
+                      <span>200</span>
+                    </div>
+                    <div>
+                      <button></button>
+                      <span>200</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div></div>
-              <div>#javascript</div>
-              <div>
-                <div>
-                  <button>좋아요</button>
-                  <span>200</span>
-                </div>
-                <div>
-                  <button>좋아요</button>
-                  <span>200</span>
-                </div>
-                <div>
-                  <button>좋아요</button>
-                  <span>200</span>
-                </div>
-              </div>
-            </article> */}
+            </article>
           </section>
 
-          <section className="section-list">right</section>
+          <section className="section-list side">
+            <article>
+              <ul>
+                <li>
+                  <img src={html} alt="" />
+                  Html
+                </li>
+                <li>
+                  <img src={css} alt="" />
+                  CSS
+                </li>
+                <li>
+                  <img src={javascript} alt="" />
+                  Javascript
+                </li>
+                <li>
+                  <img src={reactImg} alt="" />
+                  React
+                </li>
+                <li>
+                  <img src={mysql} alt="" />
+                  MySql
+                </li>
+                <li>
+                  <img src={java} alt="" />
+                  Java
+                </li>
+                <li>
+                  <img src={python} alt="" />
+                  Python
+                </li>
+              </ul>
+            </article>
+          </section>
         </main>
       </div>
     </>
